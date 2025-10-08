@@ -5,7 +5,7 @@
 }
 
 nav {
-    /*background-color: rgba(63, 97, 63, 0.792);*/
+    background-color: rgba(63, 97, 63, 0.792);
     padding: 20px;
     display: flex;
     align-items: center;
@@ -20,7 +20,7 @@ nav ul li {
 }
 nav a {
     text-decoration: none;
-    color:black;
+    color:rgba(53, 3, 3, 0.841);
     font-weight: bold;
 }
 .navtitle strong{
@@ -30,7 +30,20 @@ nav a {
 #btnSearch {
     background-color: green;
     width: 60px;
-    height: 30px;
+    height: 25px;
+}
+#btnClear {
+    background-color: green;
+    width: 60px;
+    height: 25px;
+}
+#SearchInput {
+    background-color: white;
+    height: 25px;
+}
+ul li img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s;
 }
 body {
     background-image: url(./images/back.jpg);
@@ -68,6 +81,58 @@ strong {
     filter: brightness(0) invert(1);
     transition: filter 0.3s;
 }
+#description_about_us {
+    margin: 5%;
+    background-color:rgba(63, 97, 63, 0.4);
+}
+.overlay {
+      background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .team-section {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .team-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .team-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* Espacement entre les cartes */
+    }
+
+    .team-card {
+      background-color:rgba(63, 97, 63, 0.4);/* Fond sombre pour les cartes */
+      padding: 15px;
+      border-radius: 5px;
+      width: 200px;
+    }
+
+    .team-card a {
+      color: #007bff; /* Couleur des liens */
+      text-decoration: none;
+    }
+
+    .team-card a:hover {
+      text-decoration: underline;
+    }
+
+    .team-card p {
+      margin: 5px 0;
+      font-size: 0.9em;
+    }
+
+    .team-card .role {
+      font-weight: bold;
+      color: #fff;
+    }
 
 
 
