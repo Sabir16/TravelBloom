@@ -1,144 +1,311 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 nav {
-    background-color: rgba(63, 97, 63, 0.4);
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: rgba(63, 97, 63, 0.4);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 nav ul {
-    list-style-type: none;
+  list-style-type: none;
 }
+
 nav ul li {
-    display: inline;
-    margin-right: 10px;
+  display: inline;
+  margin-right: 10px;
 }
+
 nav a {
-    text-decoration: none;
-    color:rgba(53, 3, 3, 0.841);
-    font-weight: bold;
+  text-decoration: none;
+  color:rgba(53, 3, 3, 0.841);
+  font-weight: bold;
 }
+
 .navtitle strong{
-    color: white;
-    font-size: 20px;
+  color: white;
+  font-size: 20px;
 }
+
 #btnSearch {
-    background-color: green;
-    width: 60px;
-    height: 25px;
+  background-color: green;
+  width: 60px;
+  height: 25px;
 }
+
 #btnClear {
-    background-color: green;
-    width: 60px;
-    height: 25px;
+  background-color: green;
+  width: 60px;
+  height: 25px;
 }
+
 #SearchInput {
-    background-color: white;
-    height: 25px;
+  background-color: white;
+  height: 25px;
 }
+
 ul li img {
-    filter: brightness(0) invert(1);
-    transition: filter 0.3s;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s;
 }
+
 body {
   background-image: url(./images/back.jpg);
 }
+
 h1 {
-    color: white;
-    margin: 30px;
-    margin-left: 80px;
+  color: white;
+  margin: 30px;
+  margin-left: 80px;
+  font-family: 'Roboto', sans-serif;
 }
+
 strong {
-    color: white;
+  color: white;
 }
+
 #description{
-    margin-left: 70px;
+  margin-left: 70px;
 }
+
 #btnbook {
-    background-color: green;
-    width: 75px;
-    height: 35px;
+  background-color: green;
+  width: 75px;
+  height: 35px;
 }
+
 #socialmedia {
-    list-style-type: none;
-    position: fixed;
-    left: 20px;
-    top: 65%;
+  list-style-type: none;
+  position: fixed;
+  left: 20px;
+  top: 65%;
 }
+
 #socialmedia li {
-    margin: 10px 0;
+  margin: 10px 0;
 }
+
 #socialmedia img {
-    filter: brightness(0) invert(1); /* Convertit le noir en blanc */
-    transition: filter 0.3s; /* Animation au survol */
+  filter: brightness(0) invert(1); /* Convertit le noir en blanc */
+  transition: filter 0.3s; /* Animation au survol */
 }
+
 .navtitle img {
-    filter: brightness(0) invert(1);
-    transition: filter 0.3s;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s;
 }
+
 #description_about_us {
-    margin: 5%;
-    background-color:rgba(63, 97, 63, 0.4);
+  margin: 5%;
+  background-color:rgba(63, 97, 63, 0.4);
 }
 .overlay {
-      background-color: rgba(0, 0, 0, 0.3); /* Fond semi-transparent */
-      min-height: 100vh;
-      padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3); /* Fond semi-transparent */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.team-section {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.team-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espacement entre les cartes */
+}
+
+.team-card {
+  background-color:rgba(63, 97, 63, 0.4);/* Fond sombre pour les cartes */
+  padding: 15px;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.team-card a {
+  color: #007bff; /* Couleur des liens */
+  text-decoration: none;
+}
+
+.team-card a:hover {
+  text-decoration: underline;
+}
+
+.team-card p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: white;
+}
+
+.team-card .role {
+  font-weight: bold;
+  color: #f1e4e4;
+}
+#Contact_us {
+  color: white;
+  margin-top: 18%;
+  margin-left: 15%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 45px;
+}
+
+.contact-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Hauteur pleine écran, comme l'image */
+    background-image: url('skyline-nyc.jpg'); /* Remplacez par votre image de skyline (téléchargez une photo HD de New York) */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Texte blanc pour l'overlay */
+}
+
+.contact-title {
+    font-size: 3rem; /* Taille grande pour "CONTACT US" */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre pour lisibilité sur l'image */
+    letter-spacing: 2px; /* Espacement des lettres pour un look moderne */
+}
+
+.contact-form {
+    background-color: rgba(0, 0, 0, 0.4); /* Fond semi-transparent noir pour overlay */
+    padding: 2rem;
+    border-radius: 10px; /* Coins arrondis, comme dans l'image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre subtile */
+    width: 80%; /* Responsive, max 400px sur mobile */
+    max-width: 400px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: white; /* Labels blancs */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 2px solid #00FFFF; /* Bordure cyan turquoise, comme dans l'image */
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fond semi-transparent blanc */
+    color: white; /* Texte blanc */
+    font-size: 1rem;
+    box-sizing: border-box; /* Inclut padding dans la largeur */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Placeholder clair */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Redimensionnable verticalement seulement */
+    min-height: 100px; /* Hauteur comme dans l'image */
+}
+.contact-form button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #90EE90; /* Vert clair, comme le bouton dans l'image */
+    color: black; /* Texte noir pour contraste */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Animation au survol */
+}
+
+.contact-form button:hover {
+    background-color: #7CFC00; /* Vert plus foncé au survol */
+}
+
+.social-icons {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    display: flex;
+    gap: 1rem; /* Espacement entre icônes */
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fond semi-transparent */
+    border-radius: 50%; /* Cercle pour icônes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1); /* Rend les icônes blanches pour matcher le thème */
+}
+
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 2rem; /* Plus petit sur mobile */
     }
-
-    .team-section {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
+    
+    .contact-form {
+        width: 90%;
+        padding: 1.5rem;
     }
-
-    .team-section h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      color: white;
+    
+    .social-icons {
+        bottom: 1rem;
+        left: 1rem;
     }
-
-    .team-cards {
-      display: flex;
-      justify-content: center;
-      gap: 20px; /* Espacement entre les cartes */
-    }
-
-    .team-card {
-      background-color:rgba(63, 97, 63, 0.4);/* Fond sombre pour les cartes */
-      padding: 15px;
-      border-radius: 5px;
-      width: 200px;
-    }
-
-    .team-card a {
-      color: #007bff; /* Couleur des liens */
-      text-decoration: none;
-    }
-
-    .team-card a:hover {
-      text-decoration: underline;
-    }
-
-    .team-card p {
-      margin: 5px 0;
-      font-size: 0.9em;
-      color: white;
-    }
-
-    .team-card .role {
-      font-weight: bold;
-      color: #f1e4e4;
-    }
+}
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
 /* Style pour la liste des icônes sociales 
 .social-media {
     position: fixed;
