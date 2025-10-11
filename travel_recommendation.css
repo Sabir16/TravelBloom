@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +7,7 @@
 }
 
 nav {
-  background-color: rgba(63, 97, 63, 0.4);
+  background-color: rgba(63, 97, 63, 0.7);
   padding: 20px;
   display: flex;
   align-items: center;
@@ -24,30 +25,54 @@ nav ul li {
 
 nav a {
   text-decoration: none;
-  color:rgba(53, 3, 3, 0.841);
+  color: white;
   font-weight: bold;
 }
 
-.navtitle strong{
+.navtitle strong {
   color: white;
   font-size: 20px;
 }
 
-#btnSearch {
-  background-color: green;
-  width: 60px;
-  height: 25px;
-}
-
-#btnClear {
-  background-color: green;
-  width: 60px;
-  height: 25px;
-}
-
 #SearchInput {
-  background-color: white;
-  height: 25px;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 30px;
+  padding: 0 10px;
+  border: 2px solid rgba(0, 255, 0, 0.5);
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#SearchInput:focus {
+  border-color: #00FF00;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+#btnSearch , #btnClear , #btnbook {
+  background-color: rgba(0,128,0,0.8);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s , transform 0.1s;
+}
+
+#btnSearch:hover , #btnClear:hover , #btnbook:hover {
+  background-color: #00FF00;
+  transform: translateY(-1px);
+}
+
+#btnSearch , #btnClear {
+  height: 30px;
+}
+
+#btnbook {
+  height: 35px;
 }
 
 ul li img {
@@ -57,12 +82,13 @@ ul li img {
 
 body {
   background-image: url(./images/back.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* AJOUT : Fixe le fond pour éviter le scrolling */
 }
 
 h1 {
   color: white;
-  margin: 30px;
-  margin-left: 80px;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -70,21 +96,45 @@ strong {
   color: white;
 }
 
-#description{
-  margin-left: 70px;
+#description {
+  margin: 30px 0 20px 70px; /* AJUSTEMENT : Marges plus équilibrées */
+  position: relative;
 }
 
-#btnbook {
+#description .intro-section {
+  text-align: center;
+  margin-bottom: 30px; /* AJOUT : Espacement avant les recommandations */
+}
+
+#description .intro-section h1 {
+  font-size: 48px;
+  margin: 0 0 10px;
+}
+
+#description .intro-section strong {
+  font-size: 18px;
+  display: block;
+  margin: 10px 0;
+  line-height: 1.5; /* AJOUT : Meilleure lisibilité */
+}
+
+#description .intro-section #btnbook {
   background-color: green;
   width: 75px;
   height: 35px;
+  margin-top: 15px;
 }
 
 #socialmedia {
   list-style-type: none;
   position: fixed;
   left: 20px;
-  top: 65%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  padding: 10px 0;
+  background-color:rgba(63, 97, 63, 0.2) ;
+  border-radius: 5px;
 }
 
 #socialmedia li {
@@ -92,8 +142,8 @@ strong {
 }
 
 #socialmedia img {
-  filter: brightness(0) invert(1); /* Convertit le noir en blanc */
-  transition: filter 0.3s; /* Animation au survol */
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s;
 }
 
 .navtitle img {
@@ -103,11 +153,12 @@ strong {
 
 #description_about_us {
   margin: 5%;
-  background-color:rgba(63, 97, 63, 0.4);
+  background-color: rgba(63, 97, 63, 0.4);
 }
+
 .overlay {
-  background-color: rgba(0, 0, 0, 0.3); /* Fond semi-transparent */
-  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  min-height: 60vh;
   padding: 20px;
 }
 
@@ -126,18 +177,18 @@ strong {
 .team-cards {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Espacement entre les cartes */
+  gap: 20px;
 }
 
 .team-card {
-  background-color:rgba(63, 97, 63, 0.4);/* Fond sombre pour les cartes */
+  background-color: rgb(243, 221, 182);
   padding: 15px;
   border-radius: 5px;
   width: 200px;
 }
 
 .team-card a {
-  color: #007bff; /* Couleur des liens */
+  color: #007bff;
   text-decoration: none;
 }
 
@@ -153,8 +204,9 @@ strong {
 
 .team-card .role {
   font-weight: bold;
-  color: #f1e4e4;
+  color: black;
 }
+
 #Contact_us {
   color: white;
   margin-top: 18%;
@@ -164,131 +216,190 @@ strong {
 }
 
 .contact-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Hauteur pleine écran, comme l'image */
-    background-image: url('skyline-nyc.jpg'); /* Remplacez par votre image de skyline (téléchargez une photo HD de New York) */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white; /* Texte blanc pour l'overlay */
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('skyline-nyc.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 .contact-title {
-    font-size: 3rem; /* Taille grande pour "CONTACT US" */
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre pour lisibilité sur l'image */
-    letter-spacing: 2px; /* Espacement des lettres pour un look moderne */
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
 }
 
 .contact-form {
-    background-color: rgba(0, 0, 0, 0.4); /* Fond semi-transparent noir pour overlay */
-    padding: 2rem;
-    border-radius: 10px; /* Coins arrondis, comme dans l'image */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre subtile */
-    width: 80%; /* Responsive, max 400px sur mobile */
-    max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 400px;
 }
 
 .contact-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: white; /* Labels blancs */
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: white;
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 2px solid #00FFFF; /* Bordure cyan turquoise, comme dans l'image */
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.1); /* Fond semi-transparent blanc */
-    color: white; /* Texte blanc */
-    font-size: 1rem;
-    box-sizing: border-box; /* Inclut padding dans la largeur */
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 2px solid #00FFFF;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.7); /* Placeholder clair */
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .contact-form textarea {
-    resize: vertical; /* Redimensionnable verticalement seulement */
-    min-height: 100px; /* Hauteur comme dans l'image */
+  resize: vertical;
+  min-height: 100px;
 }
+
 .contact-form button {
-    width: 100%;
-    padding: 1rem;
-    background-color: #90EE90; /* Vert clair, comme le bouton dans l'image */
-    color: black; /* Texte noir pour contraste */
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Animation au survol */
+  width: 100%;
+  padding: 1rem;
+  background-color: #90EE90;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #7CFC00; /* Vert plus foncé au survol */
+  background-color: #7CFC00;
 }
 
 .social-icons {
-    position: absolute;
-    bottom: 2rem;
-    left: 2rem;
-    display: flex;
-    gap: 1rem; /* Espacement entre icônes */
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .social-icons a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.2); /* Fond semi-transparent */
-    border-radius: 50%; /* Cercle pour icônes */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
 }
 
 .social-icons a:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .social-icons img {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0) invert(1); /* Rend les icônes blanches pour matcher le thème */
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
 }
 
 @media (max-width: 768px) {
-    .contact-title {
-        font-size: 2rem; /* Plus petit sur mobile */
-    }
-    
-    .contact-form {
-        width: 90%;
-        padding: 1.5rem;
-    }
-    
-    .social-icons {
-        bottom: 1rem;
-        left: 1rem;
-    }
+  .contact-title {
+    font-size: 2rem;
+  }
+  
+  .contact-form {
+    width: 90%;
+    padding: 1.5rem;
+  }
+  
+  .social-icons {
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  #description {
+    margin: 20px 0; /* AJUSTEMENT : Supprime margin-left sur mobile */
+    text-align: center; /* AJUSTEMENT : Centrage sur mobile */
+  }
+
+  #description .intro-section h1 {
+    font-size: 36px;
+  }
+
+  #description .intro-section strong {
+    font-size: 16px;
+  }
+
+  .recommendations {
+    flex-direction: column; /* AJUSTEMENT : Stack vertical */
+    align-items: center; /* AJUSTEMENT : Centrage */
+  }
+
+  .recommendation {
+    width: 90%; /* AJUSTEMENT : Pleine largeur sur mobile */
+  }
 }
 
+/* Styles pour les recommandations récupérées (cartes structurées) */
+.recommendations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  margin-top: 20px; /* AJOUT : Espacement après l'intro */
+}
 
+.recommendation {
+  background-color:white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* AJUSTEMENT : Ombre plus légère */
+  width: 300px;
+  max-width: 100%;
+  color: black;
+  text-align: center;
+}
 
+.recommendation img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.recommendation h3 {
+  font-size: 1.2em;
+  margin: 10px 0 5px;
+  color: black;
+}
+
+.recommendation p {
+  font-size: 0.9em;
+  color: black;
+  line-height: 1.4; /* AJOUT : Meilleure lisibilité */
+}
 
 
 
@@ -306,32 +417,3 @@ strong {
 
 
      
-/* Style pour la liste des icônes sociales 
-.social-media {
-    position: fixed;
-    left: 20px; /* Distance du bord gauche comme dans l'image 
-    top: 50%;
-    transform: translateY(-50%);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Style pour chaque icône 
-  .social-media li {
-    margin: 15px 0; /* Espacement vertical entre les icônes 
-  }
-
-  .social-media a {
-    color: #fff; /* Couleur des icônes (blanc comme dans l'image) 
-    font-size: 1.5em; /* Taille des icônes 
-    text-decoration: none;
-    transition: color 0.3s; /* Animation au survol 
-  }
-
-  .social-media a:hover {
-    color: #007bff; /* Couleur au survol (optionnel) 
-  }*/
