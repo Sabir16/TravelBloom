@@ -22,14 +22,14 @@
 
     <div class="contact-container">
         <h1 class="contact-title">CONTACT US</h1>
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form">
             <label for="name">Name</label>
             <input type="text" id="name" placeholder="Enter your name">
             <label for="email">Email</label>
             <input type="email" id="email" placeholder="Enter your email">
             <label for="message">Message</label>
             <textarea name="message" id="message" placeholder="Enter your message"></textarea>
-            <button>Submit</button>
+            <button id="sub">Submit</button>
         </form>
         <div class="social-icons">
             <a href="#"><img src="./images/twitter.png" alt="Twitter"></a>
@@ -38,5 +38,11 @@
             <a href="#"><img src="./images/youtube.png" alt="Youtube"></a>
         </div>
     </div>
+    <script>
+        const sub = document.getElementById('sub');
+        sub.addEventListener('click', ()=> {
+            alert('Merci de nous avoir contactés !');
+        })
+    </script>
 </body>
 </html>
